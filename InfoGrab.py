@@ -8,6 +8,7 @@ import re
 import os
 import time
 
+
 def getPageNumber(accID):
     url = 'http://www.dotabuff.com/players/'+accID+'/matches'
 
@@ -45,12 +46,12 @@ def pageGrab(accID, pageNumber, name):
     textfile = open(os.getcwd()+'/pros/'+name+'.txt', 'a')
 
     for match in m:
-
         textfile.write("%s\n" % match[1])
 
     textfile.close()
 
-    time.sleep(4)
+    time.sleep(5)
+
 
 def getPlayer(accID,name):
 
@@ -59,6 +60,6 @@ def getPlayer(accID,name):
 
     for i in range(1, pages):
         print(i)
-        print(pageGrab(str(accID), str(i), name))
+        pageGrab(str(accID), str(i), name)
 
 
