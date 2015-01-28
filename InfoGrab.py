@@ -38,8 +38,6 @@ def pageGrab(accID, pageNumber, name):
     newm = re.findall('(/matches/)(\d+)', html)
     m = list(set(newm))
 
-    print(m)
-
     # Write to Text File
     if not os.path.exists(os.getcwd()+'/pros'):
         os.makedirs(os.getcwd()+'/pros')
@@ -52,4 +50,15 @@ def pageGrab(accID, pageNumber, name):
 
     textfile.close()
 
-    time.sleep(2)
+    time.sleep(4)
+
+def getPlayer(accID,name):
+
+    pages = getPageNumber(accID)
+    pages = int(pages)
+
+    for i in range(1, pages):
+        print(i)
+        print(pageGrab(str(accID), str(i), name))
+
+
