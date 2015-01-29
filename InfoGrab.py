@@ -7,51 +7,65 @@ import urllib
 import re
 import os
 import time
+import sys
 
 
 def getPageNumber(accID):
-    url = 'http://www.dotabuff.com/players/'+accID+'/matches'
 
-    # add a header to define a custon User-Agent
-    hdr = { 'User-Agent' : 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0' }
+    try:
+        url = 'http://www.dotabuff.com/players/'+accID+'/matches'
 
-    req = urllib.request.Request(url, headers=hdr)
-    html = urllib.request.urlopen(req).read().decode("utf-8")
+        # add a header to define a custon User-Agent
+        hdr = { 'User-Agent' : 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0' }
 
-    m = re.search('page=(\d+)">Last', html)
-    lastMatch = (m.group(1))
-    return lastMatch
+        req = urllib.request.Request(url, headers=hdr)
+        html = urllib.request.urlopen(req).read().decode("utf-8")
+
+        m = re.search('page=(\d+)">Last', html)
+        lastMatch = (m.group(1))
+        return lastMatch
+    except:
+        print("Error Detected in getPageNumber: Sleeping for 15 min. and reconnecting")
+        print(sys.exc_info()[0])
+        time.sleep(900)
+        getPageNumber(accID)
 
 
 
 def pageGrab(accID, pageNumber, name):
 
-    # Generate new URL
-    url='http://www.dotabuff.com/players/'+accID+'/matches?page='+pageNumber
+    try:
+        # Generate new URL
+        url='http://www.dotabuff.com/players/'+accID+'/matches?page='+pageNumber
 
-    # add a header to define a custon User-Agent
-    hdr = { 'User-Agent' : 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0' }
+        # add a header to define a custon User-Agent
+        hdr = { 'User-Agent' : 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0' }
 
-    req = urllib.request.Request(url, headers=hdr)
-    html = urllib.request.urlopen(req).read().decode("utf-8")
+        req = urllib.request.Request(url, headers=hdr)
+        html = urllib.request.urlopen(req).read().decode("utf-8")
 
-    # Find all match IDs
-    newm = re.findall('(/matches/)(\d+)', html)
-    m = list(set(newm))
+        # Find all match IDs
+        newm = re.findall('(/matches/)(\d+)', html)
+        m = list(set(newm))
 
-    # Write to Text File
-    if not os.path.exists(os.getcwd()+'/pros'):
-        os.makedirs(os.getcwd()+'/pros')
+        # Write to Text File
+        if not os.path.exists(os.getcwd()+'/pros'):
+            os.makedirs(os.getcwd()+'/pros')
 
-    textfile = open(os.getcwd()+'/pros/'+name+'.txt', 'a')
+        textfile = open(os.getcwd()+'/pros/'+name+'.txt', 'a')
 
-    for match in m:
-        textfile.write("%s\n" % match[1])
+        for match in m:
+            textfile.write("%s\n" % match[1])
 
-    textfile.close()
+        textfile.close()
 
-    time.sleep(5)
-
+        time.sleep(5)
+    except:
+        print("Error Detected in pageGrab(): Sleeping for 15 min. and reconnecting")
+        print(sys.exc_info()[0])
+        time.sleep(30)
+        pageGrab(accID, pageNumber, name)
+        print("Regrabbing page #"+pageNumber)
 
 def getPlayer(accID,name):
 
