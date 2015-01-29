@@ -1,14 +1,4 @@
 ﻿skip skip
-89625472 Na`Vi.XBOCT
-86745912 Secret.Arteezy
-26316691 VP.Polar.Illidan Stormrage SF
-88585077 iG.Ferrari_430
-111620041 EG.- Suma1L *
-101495620 Alliance.Lod[A].HyperX
-87177591 EG.Fear
-32995405 @WagaGaming
-19757254 TT.SingSing
-21289303 VG.Black^
 73562326 Secret.zai
 91369376 FD.Meracle
 87278757 Secret.Puppey
@@ -57,7 +47,7 @@
 89137399 VPP.Goblak
 85805514 DeMoN
 21265941 H4nn1
-96196828 Virtus.pro &gt; BzzIsPerfect
+96196828 Virtus.pro.BzzIsPerfect
 104963314 Arrow.ddz
 98887913 xiao8
 86725175 Empire.Resolut1on
@@ -85,7 +75,7 @@
 30237211 TT.BuLba
 5448108 Fire.Fogged
 20321748 SexyBamboe
-87586992 Virtus Pro &gt; God
+87586992 Virtus.Pro. God
 76600360 VP.yol
 89371588 TongFu.DD
 86762037 Orange.WinteR
@@ -99,7 +89,7 @@
 31818853 BRAX
 89423756 LaNm
 89157606 Newbee.Mu
-91644707 MY.kyx Y `
+91644707 MY.kyxY
 90137663 TongFu.Zhou
 89217927 Newbee.Banana
 82327674 LGD.Faith
@@ -153,7 +143,7 @@
 45614257 MiTH.TnK
 9332911 PyrionFlax
 76995948 GoDZ
-91931211 Virtus.pro &gt; KSi
+91931211 Virtus.pro.KSi
 161444478 Draskyl
 68186278 SirActionSlacks
 4281729 DC | @syndereNDota
