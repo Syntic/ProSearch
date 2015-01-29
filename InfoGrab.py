@@ -50,7 +50,7 @@ def pageGrab(accID, pageNumber, name):
 
     textfile.close()
 
-    time.sleep(5)
+    time.sleep(4)
 
 
 def getPlayer(accID,name):
