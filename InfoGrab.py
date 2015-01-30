@@ -60,10 +60,11 @@ def pageGrab(accID, pageNumber, name):
         textfile.close()
 
         time.sleep(5)
-    except:
-        print("Error Detected in pageGrab(): Sleeping for 15 min. and reconnecting")
+    except Exception as e:
+        print("Error Detected in pageGrab(): Sleeping for 10 min. and reconnecting")
         print(sys.exc_info()[0])
-        time.sleep(30)
+        time.sleep(600)
+        print(str(e))
         pageGrab(accID, pageNumber, name)
         print("Regrabbing page #"+pageNumber)
 

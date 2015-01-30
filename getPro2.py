@@ -3,7 +3,7 @@ __author__ = 'synti_000'
 import InfoGrab
 import time
 
-file = open('01players.txt','r')
+file = open('01playersalt.txt','r')
 
 for line in file:
     list = line.split()
