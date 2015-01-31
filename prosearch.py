@@ -62,8 +62,8 @@ def compPro(me,pro):
 
 
 def comp(name):
-    mypath = 'C:/Users/Peter/Documents/Pro Search/me/'+ name +'.txt'
-    propath = 'C:/Users/Peter/Documents/Pro Search/promatches/'
+    mypath = os.getcwd()+'/me/'+ name +'.txt'
+    propath = os.getcwd()+'/pros/'
 
     onlyfiles = [ f for f in listdir(propath) if isfile(join(propath,f)) ]
 

@@ -1,13 +1,14 @@
 __author__ = 'Peter'
 
 import prosearch
+import InfoGrab
 
 #Download my last 500 Matches
 
-accID = '20771881'
-name = 'Atze'
+accID = '40606796'
+name = 'wcbc'
 
-prosearch.getMatches(accID,name)
+#InfoGrab.getPlayer(accID,name)
 
 #Compare to saved Database
 
