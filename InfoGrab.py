@@ -52,7 +52,7 @@ def pageGrab(accID, pageNumber, name):
         if not os.path.exists(os.getcwd()+'/pros'):
             os.makedirs(os.getcwd()+'/pros')
 
-        textfile = open(os.getcwd()+'/pros/'+name+'.txt', 'a')
+        textfile = open(os.getcwd()+'/pros/'+name+'_'+accID+'.txt', 'a')
 
         for match in m:
             textfile.write("%s\n" % match[1])
