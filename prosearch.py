@@ -4,6 +4,21 @@ import urllib.request
 import json
 import os
 
+
+
+
+def getPlayerFast(textfile):
+    file = open(textfile,'r')
+
+    for line in file:
+        list = line.split()
+
+        acct = list[0]
+        name = list[1]
+
+        print('getMatches('+acct+','+name+')')
+        getMatches(acct,name)
+
 def getMatches(accountID,name,startID='99999999999'):
 
  #Download URL and save to String
@@ -61,18 +76,66 @@ def compPro(me,pro):
             print(pro,val)
 
 
-def comp(name):
-    mypath = os.getcwd()+'/me/'+ name +'.txt'
+def comp(file):
+    mypath = os.getcwd()+'/me/'+ file
     propath = os.getcwd()+'/pros/'
 
     onlyfiles = [ f for f in listdir(propath) if isfile(join(propath,f)) ]
 
-    print(name+' has played with these Pro Players:')
+    print(file + ' has played with these Pro Players:')
     print('----------------------------------------')
 
     for val in onlyfiles:
         compPro(mypath,propath+val)
 
+
+#---------------------FIRST RUN--------------------------------------
+#---------------------FIRST RUN--------------------------------------
+#---------------------FIRST RUN--------------------------------------
+
+#Ask for ID
+givenID = input('Enter your ID: ')
+
+#Set user path
+path = os.getcwd()+'/me/'
+
+#Search for name&file
+onlyfiles = [ f for f in listdir(path) if isfile(join(path,f)) ]
+
+for val in onlyfiles:
+    file = val
+    temp = val.split('_')
+
+    try:
+        accID = temp[1]
+        accID = accID[:-4]
+        if accID == givenID:
+            print('User found: '+file)
+            comp(file)
+            break
+        else:
+            print('User not found')
+
+
+
+    except:
+        pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#if not os.path.exists(os.getcwd()+'/me'):
+ #   print("This users data is not available.")
 
 
 
