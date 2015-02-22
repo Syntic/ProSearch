@@ -98,6 +98,41 @@ def compPro(me, pro):
         if val in list2:
             print(pro, val)
 
+def updatePlayer(playerID):
+
+    # Set user path
+    path = os.getcwd() + '/pros/'
+
+    # Search for name&file
+    onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
+
+    for val in onlyfiles:
+        file = val
+        temp = val.split('_')
+
+        accID = temp[1]
+        accID = accID[:-4]
+
+        if accID == playerID:
+            print('User found: ' + file)
+
+            #Get Page number
+            pages = int(InfoGrab.getPageNumber(accID))
+
+            #Get newest match
+            open(os.getcwd()+'/me/'+name+'_'+accID+'.txt', 'r').close()
+
+
+            #cycle through all pages and grab info for them
+            for i in range(1, pages):
+                print(name+' | Page Number: '+i)
+
+
+            sys.exit()
+
+
+
+
 
 # ---------------------FIRST RUN--------------------------------------
 # ---------------------FIRST RUN--------------------------------------
