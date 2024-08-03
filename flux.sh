@@ -24,16 +24,16 @@ LORA_MODELS=(
 
 
 CLIP_MODELS=(
-    "https://huggingface.co/comfyanonymous/flux_text_encoders/blob/main/t5xxl_fp8_e4m3fn.safetensors"
-    "https://huggingface.co/comfyanonymous/flux_text_encoders/blob/main/clip_l.safetensors"
+    "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp8_e4m3fn.safetensors"
+    "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors"
 )
 
 UNET_MODELS=(
-    "https://huggingface.co/black-forest-labs/FLUX.1-schnell/blob/main/flux1-schnell.sft"
+    "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/flux1-schnell.sft"
 )
 
 VAE_MODELS=(
-    "https://huggingface.co/black-forest-labs/FLUX.1-schnell/blob/main/ae.sft"
+    "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.sft"
 )
 
 ESRGAN_MODELS=(
